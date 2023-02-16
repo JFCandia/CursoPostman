@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "17dfa37b-1be3-4099-a08f-49e524a64f1b",
+		"name": "Api Lamborgini",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25879346"
+	},
+	"item": [
+		{
+			"name": "Lamborgini",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(7000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Resppuesta incluye nombre del auto\", function (){\r",
+							"\r",
+							"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Resppuesta incluye nombre del auto\", function (){\r",
+							"\r",
+							"    pm.expect(pm.response.text()).to.include(\"description\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Resppuesta incluye nombre del auto\", function (){\r",
+							"\r",
+							"    pm.expect(pm.response.text()).to.include(\"commets\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Resppuesta incluye nombre del auto\", function (){\r",
+							"\r",
+							"    pm.expect(pm.response.text()).to.include(\"votes\");\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k51qryqov3.execute-api.ap-southeast-2.amazonaws.com/prod/models/c4u1mqnarscc72is00e0%7Cc4u1mqnarscc72is00kg",
+					"protocol": "https",
+					"host": [
+						"k51qryqov3",
+						"execute-api",
+						"ap-southeast-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"models",
+						"c4u1mqnarscc72is00e0%7Cc4u1mqnarscc72is00kg"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

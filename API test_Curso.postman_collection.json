@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "c05f00d0-22c5-4671-a2bc-3a3885d28734",
+		"name": "API test_Curso",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25879346"
+	},
+	"item": [
+		{
+			"name": "PCurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Validar que devuelva estado 200--\r",
+							"pm.test(\"Validar que la prueba sea 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"//Validar que la API devuelva en la respuesta los campos username, address, city\r",
+							"pm.test(\"Validar que la prueba username\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"username\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la prueba address\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"address\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la prueba city\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"city\");\r",
+							"});\r",
+							"\r",
+							"//Validar que la API responsa en menos de 800 milisegundos\r",
+							"pm.test(\"Validar que la prueba 800ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(800);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

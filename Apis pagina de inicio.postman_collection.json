@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "e7544618-b85d-4dec-927f-1e9f24df4d40",
+		"name": "Apis pagina de inicio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25879346"
+	},
+	"item": [
+		{
+			"name": "API Alfa Romeo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
