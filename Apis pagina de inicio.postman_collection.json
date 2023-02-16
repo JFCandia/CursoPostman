@@ -8,9 +8,65 @@
 	"item": [
 		{
 			"name": "API Alfa Romeo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Validado por Juan Francisco Candia\r",
+							"pm.test(\"Validar que la prueba sea 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Resppuesta incluye nombre del auto\", function (){\r",
+							"\r",
+							"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Resppuesta incluye nombre del auto\", function (){\r",
+							"\r",
+							"    pm.expect(pm.response.text()).to.include(\"description\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Resppuesta incluye nombre del auto\", function (){\r",
+							"\r",
+							"    pm.expect(pm.response.text()).to.include(\"image\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://k51qryqov3.execute-api.ap-southeast-2.amazonaws.com/prod/makes/c4u1mqnarscc72is00ng?modelsPage=1",
+					"protocol": "https",
+					"host": [
+						"k51qryqov3",
+						"execute-api",
+						"ap-southeast-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"makes",
+						"c4u1mqnarscc72is00ng"
+					],
+					"query": [
+						{
+							"key": "modelsPage",
+							"value": "1"
+						}
+					]
+				}
 			},
 			"response": []
 		}

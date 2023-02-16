@@ -13,6 +13,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"//Validado por Juan Francisco Candia\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
@@ -31,12 +32,12 @@
 							"    pm.expect(pm.response.text()).to.include(\"description\");\r",
 							"})\r",
 							"\r",
-							"pm.test(\"Resppuesta incluye nombre del auto\", function (){\r",
+							"pm.test(\"Resppuesta incluye nombre comments\", function (){\r",
 							"\r",
-							"    pm.expect(pm.response.text()).to.include(\"commets\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"comments\");\r",
 							"})\r",
 							"\r",
-							"pm.test(\"Resppuesta incluye nombre del auto\", function (){\r",
+							"pm.test(\"Resppuesta incluye nombre votes\", function (){\r",
 							"\r",
 							"    pm.expect(pm.response.text()).to.include(\"votes\");\r",
 							"})\r",
